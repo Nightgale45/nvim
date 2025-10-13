@@ -1,3 +1,5 @@
+---@module 'lazy'
+---@type LazySpec
 return {
 	"nvim-neo-tree/neo-tree.nvim",
 	branch = "v3.x",
@@ -6,10 +8,9 @@ return {
 		"nvim-tree/nvim-web-devicons",
 		"MunifTanjim/nui.nvim",
 	},
-    lazy = false,
+	lazy = false,
 	config = function()
 		vim.keymap.set("n", "<leader>fs", ":Neotree filesystem reveal left toggle<CR>", {})
 		vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", {})
 	end,
 }
-
