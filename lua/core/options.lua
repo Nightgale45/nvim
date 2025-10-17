@@ -1,9 +1,10 @@
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 vim.o.number = true
-vim.o.mouse = 'a'
+vim.o.relativenumber = true
+vim.o.mouse = "a"
 vim.o.showmode = false
 vim.schedule(function()
-  vim.o.clipboard = 'unnamedplus'
+	vim.o.clipboard = "unnamedplus"
 end)
 vim.o.breakindent = true
 vim.o.undofile = true
@@ -12,7 +13,7 @@ vim.o.ignorecase = true
 vim.o.updatetime = 250
 vim.o.splitright = true
 vim.o.splitbelow = true
-vim.o.inccommand = 'split'
+vim.o.inccommand = "split"
 vim.o.cursorline = true
 vim.o.scrolloff = 10
 vim.o.autoindent = true

@@ -31,6 +31,18 @@ return { -- Collection of various small independent plugins/modules
 			return "%2l:%-2v"
 		end
 
+		local MiniFiles = require("mini.files")
+
+		MiniFiles.setup()
+
+		vim.keymap.set("n", "<leader>fe", "<cmd>lua MiniFiles.open()<cr> ", { desc = "[F]ile [E]xplorer" })
+
+		vim.keymap.set("n", "-", function()
+			local buf_name = vim.api.nvim_buf_get_name(0)
+			local path = vim.fn.filereadable(buf_name) == 1 and buf_name or vim.fn.getcwd()
+			MiniFiles.open(path)
+			MiniFiles.reveal_cwd()
+		end, { desc = "Open Mini Files" })
 		-- ... and there is more!
 		--  Check out: https://github.com/nvim-mini/mini.nvim
 	end,
